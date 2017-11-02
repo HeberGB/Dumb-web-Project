@@ -9,21 +9,287 @@
 
 <body>
   <div class="main-container">
-    <h1>Te vamos a crear tu hexagrama (Heber es pto)</h1>
-    <form name="formulario">
-      <label>Introduce tus números: </label>
-      <br />
-      <input type="text" name="n1">
-      <br />
-      <input type="text" name="n2">
-      <br />
-      <input type="text" name="n3">
-      <br />
-      <input type="button" onclick="agregarLinea()" value="Agregar">
-      <input type="reset" value="Borrar línea">
-      <input type="button" onClick="borrarHexagrama()" value="Borrar hexagrama">
-    </form>
-    <div id="container-hexa"></div>
+    <h1>Hexagrama :)</h1>
+    <div class="top">
+      <div class="control">
+        <h4>Inserta un número (2 o 3) en cada campo</h4>
+        <form name="formulario">
+          <div class="inputs">
+            <input type="text" name="n1">
+            <br />
+            <input type="text" name="n2">
+            <br />
+            <input type="text" name="n3">
+            <br />
+          </div>
+          <div class="buttons">
+            <input type="button" onclick="agregarLinea()" value="Agregar">
+            <input type="reset" value="Borrar línea">
+            <input type="button" onClick="borrarHexagrama()" value="Borrar  hexagrama">
+          </div>
+        </form>
+      </div>
+
+      <div id="container-hexa"></div>
+    </div>
+    <div class="bottom">
+      <div class="table-hexa">
+        <table>
+          <thead>
+            <tr>
+              <th>Trigrama
+                <br>Superior
+                <br> Trigrama
+                <br>Inferior</th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>1</td>
+              <td>34</td>
+              <td>5</td>
+              <td>26</td>
+              <td>11</td>
+              <td>9</td>
+              <td>14</td>
+              <td>43</td>
+            </tr>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>25</td>
+              <td>51</td>
+              <td>3</td>
+              <td>27</td>
+              <td>24</td>
+              <td>42</td>
+              <td>21</td>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>6</td>
+              <td>40</td>
+              <td>29</td>
+              <td>4</td>
+              <td>7</td>
+              <td>59</td>
+              <td>64</td>
+              <td>47</td>
+            </tr>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>33</td>
+              <td>62</td>
+              <td>39</td>
+              <td>52</td>
+              <td>15</td>
+              <td>53</td>
+              <td>56</td>
+              <td>31</td>
+            </tr>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>12</td>
+              <td>16</td>
+              <td>8</td>
+              <td>23</td>
+              <td>2</td>
+              <td>20</td>
+              <td>35</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>44</td>
+              <td>32</td>
+              <td>48</td>
+              <td>18</td>
+              <td>46</td>
+              <td>57</td>
+              <td>50</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>13</td>
+              <td>55</td>
+              <td>63</td>
+              <td>22</td>
+              <td>36</td>
+              <td>37</td>
+              <td>30</td>
+              <td>49</td>
+            </tr>
+            <tr>
+              <th>
+                <div id="hexagrama">
+                  <img src="imagen3.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                  <img src="imagen2.png" id="image">
+                  <br>
+                </div>
+              </th>
+              <td>10</td>
+              <td>54</td>
+              <td>60</td>
+              <td>41</td>
+              <td>19</td>
+              <td>61</td>
+              <td>38</td>
+              <td>58</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
   </div>
   <script src="index.js" charset="UTF-8"></script>
 </body>

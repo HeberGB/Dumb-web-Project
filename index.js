@@ -62,6 +62,7 @@ function imprimirHexagramas() {
   padre.innerHTML = "";
   for (var i=0;i<listaDeHexagramas.length;i++) {
     var hijo = document.createElement("div");
+    hijo.id = "hexagrama";
     padre.appendChild(hijo);
     imprimirHexagrama(listaDeHexagramas[i],hijo);
   }
@@ -113,10 +114,6 @@ function imprimirHexagrama(hexagrama,padre) {
     saltoLinea = document.createElement("br");
     padre.appendChild(saltoLinea);
   }
-  parrafo = document.createElement("p");
-  texto = document.createTextNode("Aquí termina un hexagrama");
-  padre.appendChild(parrafo);
-  parrafo.appendChild(texto);
 }
 
 function obtenerImagen(numero) {
