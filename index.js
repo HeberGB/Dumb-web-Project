@@ -141,8 +141,10 @@ function obtenerImagen(numero) {
 
 function borrarHexagrama() {
   cont = 0;
-  listaDeHexagramas = [];
-  listaDeHexagramas[0] = [];
+  listaDeHexagramas = new Array(3);
+  for (var i=0;i<listaDeHexagramas.length;i++) { // Todos van a tener 6
+    listaDeHexagramas[i] = new Array(6);
+  }
   var padre = document.getElementById("container-hexa");
   padre.innerHTML = "";
 }
