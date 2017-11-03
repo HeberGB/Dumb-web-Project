@@ -23,7 +23,6 @@ form, .top {
 
 #image {
     width: 100%;
-    height: 20.11px;
 }
 
 #container-hexa {
@@ -34,7 +33,7 @@ form, .top {
     align-items: center;
 }
 
-#hexagrama {
+.hexagrama {
     background-color: #bad4ff;
     padding: 10px;
     margin: 20px;
@@ -66,8 +65,9 @@ form .buttons input {
     flex-wrap: nowrap;
 }
 
-table #hexagrama {
+table .hexagrama {
     width: 50px;
+    height: auto;
     padding: 5px;
     margin: 5px;
 }

@@ -1,7 +1,9 @@
-var listaDeHexagramas = [];
-listaDeHexagramas[0] = new Array(6);
+var listaDeHexagramas = new Array(3); // Ya es un arreglo de tres elementos
+for (var i=0;i<listaDeHexagramas.length;i++) { // Todos van a tener 6
+	listaDeHexagramas[i] = new Array(6);
+}
 var cont = 0;
-var contadorDeHexagramas = 0;
+var tieneMutacion = false; // Para saber si ya muto y así saber si imprimimos 1 o 3 hexagramas
 
 function agregarLinea() {
   var n1 = parseInt(document.formulario.n1.value);
@@ -15,21 +17,21 @@ function agregarLinea() {
     }
 
     if (tipo==1 || tipo==4) {
-      contadorDeHexagramas++;
-      listaDeHexagramas[contadorDeHexagramas] = new Array(6);
-      for(var i=0;i<6;i++) {
-        listaDeHexagramas[contadorDeHexagramas][i] = listaDeHexagramas[0][i];
-      }
-      listaDeHexagramas[contadorDeHexagramas][cont] = obtenerMutacion1(tipo);
-      contadorDeHexagramas++;
-      listaDeHexagramas[contadorDeHexagramas] = new Array(6);
-      for(var i=0;i<6;i++) {
-        listaDeHexagramas[contadorDeHexagramas][i] = listaDeHexagramas[0][i];
-      }
-      listaDeHexagramas[contadorDeHexagramas][cont] = obtenerMutacion2(tipo);
+      listaDeHexagramas[1][cont] = obtenerMutacion1(tipo); // Como ya no tengo que crear nuevos hexagramas entonces se reduce aqui
+      listaDeHexagramas[2][cont] = obtenerMutacion2(tipo);
+      tieneMutacion = true;
     }
       cont++;
-    imprimirHexagramas();
+    if(tieneMutacion == false) {  // Para imprimir solo un hexagrama
+    	var padre = document.getElementById("Hexagrama");
+    	padre.innerHTML = "";
+    	var hijo = document.createElement("div");
+    	padre.appendChild(hijo);
+    	imprimirHexagrama(listaDeHexagramas[0],hijo);
+    }
+    else { // Para imprimir los tres hexagramas
+    	imprimirHexagramas();
+    }
     // Aqui supongo que le agregaremos un if cont==5, para saber que se completó el hexagrama,
     // mandamos los hexagramas y obtenemos el numero de cada uno, y ya de ahí el nombre
     // si necesitas ayuda metiendo los nombres y las descripciones me dices
@@ -62,7 +64,8 @@ function imprimirHexagramas() {
   padre.innerHTML = "";
   for (var i=0;i<listaDeHexagramas.length;i++) {
     var hijo = document.createElement("div");
-    hijo.id = "hexagrama";
+    hijo.className = "hexagrama";
+    hijo.id = i;
     padre.appendChild(hijo);
     imprimirHexagrama(listaDeHexagramas[i],hijo);
   }
@@ -108,8 +111,10 @@ function imprimirHexagrama(hexagrama,padre) {
   padre.innerHTML = "";
   for(var i=hexagrama.length-1; i>=0; i--) {
     imagen = document.createElement("IMG");
-    imagen.src = obtenerImagen(hexagrama[i]);
-    imagen.id = "image";
+    if(obtenerImagen(hexagrama[i])){
+      imagen.src = obtenerImagen(hexagrama[i]);
+      imagen.id = "image";
+    }
     padre.appendChild(imagen);
     saltoLinea = document.createElement("br");
     padre.appendChild(saltoLinea);
@@ -136,9 +141,21 @@ function obtenerImagen(numero) {
 
 function borrarHexagrama() {
   cont = 0;
-  contadorDeHexagramas = 0;
   listaDeHexagramas = [];
-  listaDeHexagramas[0] = new Array(6);
+  listaDeHexagramas[0] = [];
   var padre = document.getElementById("container-hexa");
   padre.innerHTML = "";
+}
+
+function valor() {
+
+}
+
+function union(hexSuperior, hexInferior) {
+  while(hexInferior.hasChildNodes()){
+    hexSuperior.id="";
+    hexSuperior.appendChild(hexInferior.firstChild);
+    console.log(hexSuperior);
+  }
+  
 }
