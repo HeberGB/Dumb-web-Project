@@ -262,38 +262,38 @@ function union(hexSuperior, hexInferior) {
 
 function valorHexagrama(hexa) {
   var images = hexa.getElementsByClassName("image");
-  var unaLinea = "file:///C:/Users/hjgb/dev/Proyecto%20Web%20(Heber%20es%20gay)/imagen2.png";
-  var dosLineas = "file:///C:/Users/hjgb/dev/Proyecto%20Web%20(Heber%20es%20gay)/imagen3.png";
+  var unaLinea = new RegExp("imagen2");
+  var dosLineas = new RegExp("imagen3");
   console.log(valorPorSeccion("superior"));
   console.log(valorPorSeccion("inferior"));
   return cambiandoValor(String(valorPorSeccion("superior")) + String(valorPorSeccion("inferior")));
   function valorPorSeccion(seccion) {
     var i = seccion == "superior" ? 0 : 3;
-    if (images[i + 0].src == unaLinea) {
-      if (images[i + 1].src == unaLinea) {
-        if (images[i + 2].src == unaLinea) {
+    if (unaLinea.test(images[i + 0].src)) {
+      if (unaLinea.test(images[i + 1].src)) {
+        if (unaLinea.test(images[i + 2].src)) {
           return 1;
-        } else if (images[i + 2].src == dosLineas) {
+        } else if (dosLineas.test(images[i + 2].src)) {
           return 6;
         }
-      } else if (images[i + 1].src == dosLineas) {
-        if (images[i + 2].src == dosLineas) {
+      } else if (dosLineas.test(images[i + 1].src)) {
+        if (dosLineas.test(images[i + 2].src)) {
           return 4;
-        } else if (images[i + 2].src == unaLinea) {
+        } else if (unaLinea.test(images[i + 2].src)) {
           return 7;
         }
       }
-    } else if (images[i + 0].src == dosLineas) {
-      if (images[i + 1].src == dosLineas) {
-        if (images[i + 2].src == dosLineas) {
+    } else if (dosLineas.test(images[i + 0].src)) {
+      if (dosLineas.test(images[i + 1].src)) {
+        if (dosLineas.test(images[i + 2].src)) {
           return 5;
-        } else if (images[i + 2].src == unaLinea) {
+        } else if (unaLinea.test(images[i + 2].src)) {
           return 2;
         }
-      } else if (images[i + 1].src == unaLinea) {
-        if (images[i + 2].src == dosLineas) {
+      } else if (unaLinea.test(images[i + 1].src)) {
+        if (dosLineas.test(images[i + 2].src)) {
           return 3;
-        } else if (images[i + 2].src == unaLinea) {
+        } else if (unaLinea.test(images[i + 2].src)) {
           return 8;
         }
       }
