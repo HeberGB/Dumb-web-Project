@@ -21,7 +21,7 @@ form, .top {
     align-items: center;
 }
 
-#image {
+.image {
     width: 100%;
 }
 
@@ -40,6 +40,8 @@ form, .top {
     border-radius: 3px;
     box-shadow: 5px 0 #5f697a;
     width: 100px;
+    text-align: center;
+    font-weight: bold;
 }
 
 form input {
@@ -76,6 +78,11 @@ table td {
     text-align: center;
     background: #f7fcfc;
     border-radius: 6px;
+}
+
+.seleccionado {
+    background-color: red;
+    font-weight: bold;
 }
 
 form .buttons input:hover {
