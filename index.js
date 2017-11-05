@@ -119,22 +119,22 @@ function agregarLinea() {
     }
     console.log(cont);
     if (cont == 6) {
-      var valor2 = valorHexagrama(document.getElementById("hexagrama-2"));
-      var hexagrama = document.getElementById("hexagrama-2");
-      hexagrama.addEventListener('mouseover', function () {
+      var hexagrama2 = document.getElementById("hexagrama-2");
+      var valor2 = valorHexagrama(hexagrama2);
+      hexagrama2.addEventListener('mouseover', function () {
         mostrarDescripcion(valor2);
       });
       prenderCelda(valor2);
-      hexagrama.appendChild(document.createTextNode(String(valor2) + ". " + nombres[valor2 - 1]));
+      hexagrama2.appendChild(document.createTextNode(String(valor2) + ". " + nombres[valor2 - 1]));
       
       if (document.getElementById("hexagrama-1")) {
-        var valor1 = valorHexagrama(document.getElementById("hexagrama-1"));
-        var hexagrama = document.getElementById("hexagrama-1");
-        hexagrama.addEventListener('mouseover', function () {
+        var hexagrama1 = document.getElementById("hexagrama-1");
+        var valor1 = valorHexagrama(hexagrama1);
+        hexagrama1.addEventListener('mouseover', function () {
           mostrarDescripcion(valor1);
         });
         prenderCelda(valor1);
-        hexagrama.appendChild(document.createTextNode(String(valor1) + ". " + nombres[valor1 - 1]));
+        hexagrama1.appendChild(document.createTextNode(String(valor1) + ". " + nombres[valor1 - 1]));
       }
     }
   }
@@ -242,6 +242,16 @@ function obtenerImagen(numero) {
 }
 
 function borrarHexagrama() {
+  //Se usa para quitar las celdas ya marcadas
+  var hexagrama2 = document.getElementById("hexagrama-2");
+  var valor2 = valorHexagrama(hexagrama2);
+  apagarCelda(valor2);
+  if (document.getElementById("hexagrama-1")) {
+    var hexagrama1 = document.getElementById("hexagrama-1");
+    var valor1 = valorHexagrama(hexagrama1);
+    apagarCelda(valor1);
+  }
+  //
   cont = 0;
   listaDeHexagramas = new Array(3);
   tieneMutacion = false;
@@ -434,14 +444,21 @@ function valorHexagrama(hexa) {
 }
 
 function prenderCelda(valor) {
-  console.log("si se ejecuto");
-  console.log(valor);
   var tabla = document.getElementById("table-hexa");
   var valores = tabla.getElementsByTagName("td");
   for (let i = 0 ; i < valores.length ; i++){
-    console.log(String(valor) == valores[i].textContent)
     if (String(valor) == valores[i].textContent) {
       valores[i].className = "seleccionado";
+    }
+  }
+}
+
+function apagarCelda(valor) {
+  var tabla = document.getElementById("table-hexa");
+  var valores = tabla.getElementsByTagName("td");
+  for (let i = 0 ; i < valores.length ; i++){
+    if (String(valor) == valores[i].textContent) {
+      valores[i].className = "";
     }
   }
 }
