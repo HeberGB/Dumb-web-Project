@@ -63,7 +63,7 @@ var significados = [
   'Fe Interior. La verdad interior. La sinceridad interna.',
   'Pequeñas cosas importantes. La pequeña preponderancia.',
   'Conclusiones. Después de la realización.',
-  'Inconcluso. Antes de la realización.'  
+  'Inconcluso. Antes de la realización.'
 ];
 
 var nombres = [
@@ -126,7 +126,7 @@ function agregarLinea() {
       });
       prenderCelda(valor2);
       hexagrama2.appendChild(document.createTextNode(String(valor2) + ". " + nombres[valor2 - 1]));
-      
+
       if (document.getElementById("hexagrama-1")) {
         var hexagrama1 = document.getElementById("hexagrama-1");
         var valor1 = valorHexagrama(hexagrama1);
@@ -242,14 +242,16 @@ function obtenerImagen(numero) {
 }
 
 function borrarHexagrama() {
-  //Se usa para quitar las celdas ya marcadas
-  var hexagrama2 = document.getElementById("hexagrama-2");
-  var valor2 = valorHexagrama(hexagrama2);
-  apagarCelda(valor2);
-  if (document.getElementById("hexagrama-1")) {
-    var hexagrama1 = document.getElementById("hexagrama-1");
-    var valor1 = valorHexagrama(hexagrama1);
-    apagarCelda(valor1);
+  if (cont == 6) {
+    //Se usa para quitar las celdas ya marcadas
+    var hexagrama2 = document.getElementById("hexagrama-2");
+    var valor2 = valorHexagrama(hexagrama2);
+    apagarCelda(valor2);
+    if (document.getElementById("hexagrama-1")) {
+      var hexagrama1 = document.getElementById("hexagrama-1");
+      var valor1 = valorHexagrama(hexagrama1);
+      apagarCelda(valor1);
+    }
   }
   //
   cont = 0;
@@ -446,7 +448,7 @@ function valorHexagrama(hexa) {
 function prenderCelda(valor) {
   var tabla = document.getElementById("table-hexa");
   var valores = tabla.getElementsByTagName("td");
-  for (let i = 0 ; i < valores.length ; i++){
+  for (let i = 0; i < valores.length; i++) {
     if (String(valor) == valores[i].textContent) {
       valores[i].className = "seleccionado";
     }
@@ -456,7 +458,7 @@ function prenderCelda(valor) {
 function apagarCelda(valor) {
   var tabla = document.getElementById("table-hexa");
   var valores = tabla.getElementsByTagName("td");
-  for (let i = 0 ; i < valores.length ; i++){
+  for (let i = 0; i < valores.length; i++) {
     if (String(valor) == valores[i].textContent) {
       valores[i].className = "";
     }
@@ -464,5 +466,5 @@ function apagarCelda(valor) {
 }
 
 function mostrarDescripcion(valor) {
-  alert(significados[valor-1]);
+  alert(significados[valor - 1]);
 }
