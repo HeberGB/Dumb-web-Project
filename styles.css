@@ -65,6 +65,7 @@ form .buttons input {
     margin: 10px;
     width: auto;
     flex-wrap: nowrap;
+    cursor: pointer;
 }
 
 table .hexagrama {
@@ -95,4 +96,10 @@ form .buttons input:active {
     transform: translateY(5px);
     box-shadow: 0 3px #200c0c;
     transition-duration: .2s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

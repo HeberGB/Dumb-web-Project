@@ -84,11 +84,6 @@ var cont = 0;
 var tieneMutacion = false; // Para saber si ya muto y así saber si imprimimos 1 o 3 hexagramas
 
 function agregarLinea() {
-  if (cont == 6) {
-    alert("Ya esta completo el hexagrama");
-    limpiarLineas();
-    return;
-  }
   var n1 = parseInt(document.formulario.n1.value);
   var n2 = parseInt(document.formulario.n2.value);
   var n3 = parseInt(document.formulario.n3.value);
@@ -117,8 +112,13 @@ function agregarLinea() {
     else { // Para imprimir los tres hexagramas
       imprimirHexagramas();
     }
-    console.log(cont);
     if (cont == 6) {
+      var entradas = document.getElementById("ins").getElementsByTagName("input");
+      limpiarLineas();
+      for (let i = 0; i < entradas.length ; i++) {
+        entradas[i].style.cursor="not-allowed";
+        entradas[i].disabled=true;
+      }
       var hexagrama2 = document.getElementById("hexagrama-2");
       var valor2 = valorHexagrama(hexagrama2);
       hexagrama2.addEventListener('mouseover', function () {
@@ -276,8 +276,6 @@ function valorHexagrama(hexa) {
   var images = hexa.getElementsByClassName("image");
   var unaLinea = new RegExp("imagen2");
   var dosLineas = new RegExp("imagen3");
-  console.log(valorPorSeccion("superior"));
-  console.log(valorPorSeccion("inferior"));
   return cambiandoValor(String(valorPorSeccion("superior")) + String(valorPorSeccion("inferior")));
   function valorPorSeccion(seccion) {
     var i = seccion == "superior" ? 0 : 3;
