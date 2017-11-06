@@ -1,0 +1,98 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #151a23;
+}
+
+body {
+    background-color: #eaeaea;
+}
+
+form, .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.main-container, .buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    width: 100%;
+}
+
+#container-hexa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hexagrama {
+    background-color: #bad4ff;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 3px;
+    box-shadow: 5px 0 #5f697a;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+form input {
+    outline: none;
+    border-radius: 3px;
+    border-color: black;
+    text-align: center;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+form .buttons input {
+    outline: none;
+    font-weight: bold;
+    padding: 8px;
+    border-style: none;
+    border-radius: 3px;
+    background: #ff5959;
+    box-shadow: 0 8px #4c1b1b;
+    margin: 10px;
+    width: auto;
+    flex-wrap: nowrap;
+}
+
+table .hexagrama {
+    width: 50px;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+}
+
+table td {
+    text-align: center;
+    background: #f7fcfc;
+    border-radius: 6px;
+}
+
+.seleccionado {
+    background-color: red;
+    font-weight: bold;
+}
+
+form .buttons input:hover {
+    transform: scale(1.25);
+    transition-duration: .5s;
+}
+
+form .buttons input:active {
+    background: #b84242;
+    transform: translateY(5px);
+    box-shadow: 0 3px #200c0c;
+    transition-duration: .2s;
+}
