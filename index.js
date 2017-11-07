@@ -115,9 +115,9 @@ function agregarLinea() {
     if (cont == 6) {
       var entradas = document.getElementById("ins").getElementsByTagName("input");
       limpiarLineas();
-      for (let i = 0; i < entradas.length ; i++) {
-        entradas[i].style.cursor="not-allowed";
-        entradas[i].disabled=true;
+      for (let i = 0; i < entradas.length; i++) {
+        entradas[i].style.cursor = "not-allowed";
+        entradas[i].disabled = true;
       }
       var hexagrama2 = document.getElementById("hexagrama-2");
       var valor2 = valorHexagrama(hexagrama2);
@@ -243,6 +243,13 @@ function obtenerImagen(numero) {
 
 function borrarHexagrama() {
   if (cont == 6) {
+    var entradas = document.getElementById("ins").getElementsByTagName("input");
+    limpiarLineas();
+    for (let i = 0; i < entradas.length; i++) {
+      entradas[i].style.cursor = "auto";
+      entradas[i].disabled = false;
+    }
+
     //Se usa para quitar las celdas ya marcadas
     var hexagrama2 = document.getElementById("hexagrama-2");
     var valor2 = valorHexagrama(hexagrama2);
