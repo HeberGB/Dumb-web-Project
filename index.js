@@ -105,7 +105,7 @@ function agregarLinea() {
       padre.innerHTML = "";
       var hijo = document.createElement("div");
       hijo.className = "hexagrama";
-      hijo.id = 2;
+      hijo.id = "hexagrama-2";
       padre.appendChild(hijo);
       imprimirHexagrama(listaDeHexagramas[0], hijo);
     }
@@ -115,9 +115,9 @@ function agregarLinea() {
     if (cont == 6) {
       var entradas = document.getElementById("ins").getElementsByTagName("input");
       limpiarLineas();
-      for (let i = 0; i < entradas.length ; i++) {
-        entradas[i].style.cursor="not-allowed";
-        entradas[i].disabled=true;
+      for (let i = 0; i < entradas.length; i++) {
+        entradas[i].style.cursor = "not-allowed";
+        entradas[i].disabled = true;
       }
       var hexagrama2 = document.getElementById("hexagrama-2");
       var valor2 = valorHexagrama(hexagrama2);
@@ -159,7 +159,37 @@ function sonCorrectasEntradas(n1, n2, n3) {
 
 function limpiarLineas() {
   document.formulario.reset();
+  /*cont--;
+  listaDeHexagramas[0][cont] = "";
+  if(tieneMutacion) {
+    listaDeHexagramas[1][cont] = "";
+    listaDeHexagramas[2][cont] = "";
+  }*/
 }
+
+function borrarLinea() {
+  if(cont>0) {
+    cont--;
+
+  if(document.getElementById("hexagrama-1")){
+    listaDeHexagramas[0][cont]="";
+    listaDeHexagramas[2][cont]="";
+    listaDeHexagramas[1][cont]="";   
+    imprimirHexagramas();
+  } else {
+    listaDeHexagramas[0][cont]="";
+  var padre = document.getElementById("container-hexa");
+      padre.innerHTML = "";
+      var hijo = document.createElement("div");
+      hijo.className = "hexagrama";
+      hijo.id = "hexagrama-2";
+      padre.appendChild(hijo);
+      imprimirHexagrama(listaDeHexagramas[0], hijo);  }
+  }
+  
+}
+
+
 
 function imprimirHexagramas() {
   var padre = document.getElementById("container-hexa");
@@ -243,6 +273,13 @@ function obtenerImagen(numero) {
 
 function borrarHexagrama() {
   if (cont == 6) {
+    var entradas = document.getElementById("ins").getElementsByTagName("input");
+    limpiarLineas();
+    for (let i = 0; i < entradas.length; i++) {
+      entradas[i].style.cursor = "auto";
+      entradas[i].disabled = false;
+    }
+
     //Se usa para quitar las celdas ya marcadas
     var hexagrama2 = document.getElementById("hexagrama-2");
     var valor2 = valorHexagrama(hexagrama2);
